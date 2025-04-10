@@ -1,8 +1,8 @@
 import requests
 from datetime import datetime
-import resend, schedule, time
+import resend, schedule, time, os
 
-resend.api_key = "re_fBKyRS74_5zyQmfxrubNxBqSnTmpLgTQ4"
+resend.api_key = os.getenv("RESEND_API_KEY")
 
 # API endpoints to check
 API_ENDPOINTS = {
@@ -11,7 +11,7 @@ API_ENDPOINTS = {
     "Native Validators API": "https://api.native.testnet.5ire.network/5ire/validator",
 }
 
-EMAIL_RECIPIENT = ["piyush.choudhary@5ire.org", "hitesh@5ire.org"]
+EMAIL_RECIPIENT = os.getenv("EMAIL_RECIPIENT")
 
 def build_consolidated_html_message(api_results: list) -> str:
     now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
