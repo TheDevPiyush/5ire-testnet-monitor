@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 import resend, schedule, time
 
-resend.api_key = "re_fBKyRS74_5zyQmfxrubNxBqSnTmpLgTQ4"
+resend.api_key = "RESEND_API_KEY"
 
 # API endpoints to check
 API_ENDPOINTS = {
